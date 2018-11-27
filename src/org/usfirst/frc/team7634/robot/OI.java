@@ -5,19 +5,23 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team4598.robot.subsystems;
+package org.usfirst.frc.team7634.robot;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc.team7634.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.XboxController;
 
 /**
- * An example subsystem.  You can replace me with your own Subsystem.
+ * This class is the glue that binds the controls on the physical operator
+ * interface to the commands and command groups that allow control of the robot.
  */
-public class ExampleSubsystem extends Subsystem {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-
-	public void initDefaultCommand() {
-		// Set the default command for a subsystem here.
-		// setDefaultCommand(new MySpecialCommand());
+public class OI {
+	int port = RobotMap.XBOX_PORT;
+	XboxController controller = new XboxController(port);
+	
+	public XboxController getController() {
+		return controller;
 	}
 }
+
+
